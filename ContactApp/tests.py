@@ -25,17 +25,13 @@ class TestContacts(APITestCase):
         self.assertEqual(result[0]["ContactName"], "Daniel")
 
     def test_post_contacts(self):
-        #definition
-        data = {
+        contact_data = {
             "ContactName": "Mircea",
             "ContactPhone": "0756234123",
             "ContactAddress": "dwqd@gmail.com"
             }
-        
-        #process
-        response = self.client.post(self.url, data=data)
+        response = self.client.post(self.url, data=contact_data)
 
-        #assert
         self.assertEqual(response.status_code, 201)
 
    
